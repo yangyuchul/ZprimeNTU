@@ -1,6 +1,6 @@
 #include "ZZStyle.C"
 
-void drawStack() {
+void drawStack(bool useDataBkg = false) {
 	TString histDir = "/wk3/cmsdas/store/user/cmsdas/2016/LONG_EXERCISES/ZprimeDiLeptons/histosZprimeMuMu_combined/" ;
 	TString fileName[44];
 	TFile* file[44];
@@ -108,7 +108,7 @@ void drawStack() {
 	TH1F* h1_zpri   = (TH1F*)(h1[43]->Clone());
 
 
-	bool useDataBkg = true;
+	
 	TH1F* h1_wjet = (useDataBkg) ? (TH1F*) h1_wjetData->Clone() : (TH1F*)h1_wjetMC;
 	TH1F* h1_mjet = (useDataBkg) ? (TH1F*) h1_mjetData->Clone() : (TH1F*)h1_mjetMC;
 
@@ -164,8 +164,6 @@ void drawStack() {
 		h1_sBkg->Add(h1_z2mm);
 
 
-	//TH2F* hframe1 = new TH2F("hframe1","hframe1",80,60.,3000.,500,0.005,50000.);
-   //TH2F* hframe2 = new TH2F("hframe2","hframe2",80,60.,3000.,1000, -1.5, 3.5);
 	TH2F* hframe1 = new TH2F("hframe1","hframe1",80,60.,3000.,500,0.005,50000.);
    TH2F* hframe2 = new TH2F("hframe2","hframe2",80,60.,3000.,1000, -1.5, 3.5);
 
@@ -258,8 +256,11 @@ void drawStack() {
 	ll->AddText(0.65, 0.6, text);
 	ll->Draw("same");
 
-
-	c1->Print("drawStack.pdf");
+	if(useDataBkg) {
+		c1->Print("drawStack_QCDfromData.pdf");
+	} else {
+		c1->Print("drawStack.pdf");
+	}
 
 
 }
