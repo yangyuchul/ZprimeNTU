@@ -76,8 +76,27 @@ cd -
 echo ""
 
 
+echo "### Exercise4: Background estimation and Fake Rate"
+cd ex4_fakeRate
+root -l -b -q  plotFR_QCD.C
+root -l -b -q  plotFraction_EWK.C
+root -l -b -q  plotFR_data.C
+ls -al *.pdf
+cd -
+echo ""
+
+echo "### Exercise5: Significance"
+cd ex5_significance
+root -l -b -q sig.C
+ls -al *.pdf
+cd -
+echo ""
+
+
+ 
 echo "###########"
-find . -name "*.png"
-find . -name "*.pdf"
+
+find step1_NtupleCreation step2_AnaCode ex1a_PhysObs ex1b_MassRes ex3_TagProbe ex4_fakeRate ex5_significance -name "*.pdf"
+find step1_NtupleCreation step2_AnaCode ex1a_PhysObs ex1b_MassRes ex3_TagProbe ex4_fakeRate ex5_significance -name "*.png"
 echo "#Done"
 
