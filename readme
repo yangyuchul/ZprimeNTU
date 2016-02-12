@@ -1,0 +1,14 @@
+mkdir ZprimeMuMu ; cd ZprimeMuMu 
+export SCRAM_ARCH=slc6_amd64_gcc491 
+export VO_CMS_SW_DIR=/cvmfs/cms.cern.ch 
+source ${VO_CMS_SW_DIR}/cmsset_default.sh 
+cmsrel CMSSW_7_4_5 
+cd CMSSW_7_4_5/src 
+cmsenv
+
+git clone https://github.com/cms-analysis/ZprimeDiLeptons 
+scramv1 b -j6
+
+git clone https://github.com/yangyuchul/ZprimeNTU.git
+
+
