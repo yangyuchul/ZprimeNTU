@@ -13,7 +13,9 @@ scramv1 b -j6
 
 git clone https://github.com/yangyuchul/ZprimeNTU.git
 cd ZprimeNTU
-./runAll.sh
+
+
+
 
 
 
