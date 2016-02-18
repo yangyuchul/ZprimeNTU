@@ -9,7 +9,6 @@ cmsRun runMakeMuonTree_HLT50_mc_cfg.py
 echo "cmsRun runMakeMuonTree_HLT50_mc_cfg.py To background job"
 root -b -l -q pre.C
 ls -al $PWD/pre.pdf
-
 cd -
 echo ""
 
