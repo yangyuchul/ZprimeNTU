@@ -3,12 +3,13 @@
 
 echo "### Step1: The ntuple creation "
 cd step1_NtupleCreation
-cmsRun runMakeMuonTree_HLT50_cfg.py    >& runMakeMuonTree_HLT50_cfg.log    &
+cmsRun runMakeMuonTree_HLT50_cfg.py   
 echo "cmsRun runMakeMuonTree_HLT50_cfg.py To backgroud job"
-cmsRun runMakeMuonTree_HLT50_mc_cfg.py >& runMakeMuonTree_HLT50_mc_cfg.log &
+cmsRun runMakeMuonTree_HLT50_mc_cfg.py 
 echo "cmsRun runMakeMuonTree_HLT50_mc_cfg.py To background job"
 root -b -l -q pre.C
 ls -al $PWD/pre.pdf
+
 cd -
 echo ""
 
